@@ -7,12 +7,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:imc_tdd/imc_controller.dart';
 
 import 'package:imc_tdd/main.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   testWidgets('Test logic of insert data page', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(
+        ChangeNotifierProvider(
+          create: (context) => IMCController(),
+          child: const MyApp(),
+        )
+    );
 
     expect(find.text("Por favor, informe a altura!"), findsNothing);
     await tester.tap(find.byType(ElevatedButton));
