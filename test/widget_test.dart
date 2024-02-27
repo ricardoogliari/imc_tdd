@@ -11,20 +11,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:imc_tdd/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('Test logic of insert data page', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    expect(find.text("Por favor, informe a altura!"), findsNothing);
+    await tester.tap(find.byType(ElevatedButton));
     await tester.pump();
+    expect(find.text("Por favor, informe a altura!"), findsOneWidget);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    await tester.enterText(find.byType(TextFormField).first, "55.0");
+    await tester.enterText(find.byType(TextFormField).at(1), "1.79");
+    await tester.tap(find.byType(ElevatedButton));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(ElevatedButton), findsNothing);
   });
 }
