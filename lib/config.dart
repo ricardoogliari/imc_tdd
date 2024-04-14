@@ -1,8 +1,8 @@
-final List resultados = [
-  "AGUARDANDO DADOS",
-  "MAGREZA",
+final List results = [
+  "WAITING DATA",
+  "THINNESS",
   "NORMAL",
-  "SOBREPESO",
-  "OBESIDADE",
-  "OBESIDADE GRAVE",
+  "OVERWEIGHT",
+  "OBESITY",
+  "SEVERE OBESITY",
 ];

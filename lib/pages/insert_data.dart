@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:imc_tdd/imc_controller.dart';
+import 'package:imc_tdd/bmi_controller.dart';
 import 'package:provider/provider.dart';
 
 class InsertData extends StatelessWidget {
@@ -8,14 +7,14 @@ class InsertData extends StatelessWidget {
 
   final _formKey = GlobalKey<FormState>();
 
-  final TextEditingController _pesoController = TextEditingController();
-  final TextEditingController _alturaController = TextEditingController();
+  final TextEditingController _weightController = TextEditingController();
+  final TextEditingController _heightController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Dados"),
+        title: const Text("Personal Information"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -24,33 +23,33 @@ class InsertData extends StatelessWidget {
           child: Column(
             children: [
               TextFormField(
-                controller: _pesoController,
+                controller: _weightController,
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value == null || value.isEmpty){
-                    return "Por favor, informe o peso!";
+                    return "Please, enter the weight!";
                   }
 
                   return null;
                 },
                 decoration: const InputDecoration(
-                  labelText: "Peso",
+                  labelText: "Weight",
                   border: OutlineInputBorder()
                 ),
               ),
               const SizedBox(height: 6,),
               TextFormField(
-                controller: _alturaController,
+                controller: _heightController,
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value == null || value.isEmpty){
-                    return "Por favor, informe a altura!";
+                    return "Please, enter the height!";
                   }
 
                   return null;
                 },
                 decoration: const InputDecoration(
-                    labelText: "Altura",
+                    labelText: "Height",
                     border: OutlineInputBorder()
                 ),
               ),
@@ -58,15 +57,15 @@ class InsertData extends StatelessWidget {
               ElevatedButton(
                   onPressed: (){
                     if (_formKey.currentState!.validate()){
-                      Provider.of<IMCController>(context, listen: false).calcImc(
-                          peso: double.parse(_pesoController.text),
-                          altura: double.parse(_alturaController.text)
+                      Provider.of<BMIController>(context, listen: false).calcBmi(
+                          peso: double.parse(_weightController.text),
+                          altura: double.parse(_heightController.text)
                       );
 
                       Navigator.pushNamed(context, '/result');
                     }
                   },
-                  child: Text("Calcular"))
+                  child: const Text("Calculate"))
             ],
           ),
         ),

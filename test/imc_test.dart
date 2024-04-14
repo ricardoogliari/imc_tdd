@@ -1,51 +1,51 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:imc_tdd/config.dart';
-import 'package:imc_tdd/imc_controller.dart';
+import 'package:imc_tdd/bmi_controller.dart';
 
 void main(){
-  group('Test start and all levels of imc logic', (){
+  group('Test start and all levels of bmi logic', (){
     test('value should start at 0', () {
-      expect(IMCController().resultado, resultados[0]);
+      expect(BMIController().result, results[0]);
     });
 
-    test('value should be imc level 1', () {
-      final controller = IMCController();
+    test('value should be bmi level 1', () {
+      final out = BMIController();
 
-      controller.calcImc(peso: 55.0, altura: 1.79);
+      out.calcBmi(peso: 55.0, altura: 1.79);
 
-      expect(controller.resultado, resultados[1]);
+      expect(out.result, results[1]);
     });
 
-    test('value should be imc level 2', () {
-      final controller = IMCController();
+    test('value should be bmi level 2', () {
+      final controller = BMIController();
 
-      controller.calcImc(peso: 68.0, altura: 1.79);
+      controller.calcBmi(peso: 68.0, altura: 1.79);
 
-      expect(controller.resultado, resultados[2]);
+      expect(controller.result, results[2]);
     });
 
-    test('value should be imc level 3', () {
-      final controller = IMCController();
+    test('value should be bmi level 3', () {
+      final controller = BMIController();
 
-      controller.calcImc(peso: 89.0, altura: 1.79);
+      controller.calcBmi(peso: 89.0, altura: 1.79);
 
-      expect(controller.resultado, resultados[3]);
+      expect(controller.result, results[3]);
     });
 
-    test('value should be imc level 4', () {
-      final controller = IMCController();
+    test('value should be bmi level 4', () {
+      final controller = BMIController();
 
-      controller.calcImc(peso: 98.0, altura: 1.79);
+      controller.calcBmi(peso: 98.0, altura: 1.79);
 
-      expect(controller.resultado, resultados[4]);
+      expect(controller.result, results[4]);
     });
 
-    test('value should be imc level 5', () {
-      final controller = IMCController();
+    test('value should be bmi level 5', () {
+      final controller = BMIController();
 
-      controller.calcImc(peso: 98.0, altura: 1.52);
+      controller.calcBmi(peso: 98.0, altura: 1.52);
 
-      expect(controller.resultado, resultados[5]);
+      expect(controller.result, results[5]);
     });
   });
 }

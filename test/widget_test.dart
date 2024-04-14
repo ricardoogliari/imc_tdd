@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:imc_tdd/imc_controller.dart';
+import 'package:imc_tdd/bmi_controller.dart';
 
 import 'package:imc_tdd/main.dart';
 import 'package:provider/provider.dart';
@@ -16,15 +16,15 @@ void main() {
   testWidgets('Test logic of insert data page', (WidgetTester tester) async {
     await tester.pumpWidget(
         ChangeNotifierProvider(
-          create: (context) => IMCController(),
+          create: (context) => BMIController(),
           child: const MyApp(),
         )
     );
 
-    expect(find.text("Por favor, informe a altura!"), findsNothing);
+    expect(find.text("Please, enter the weight!"), findsNothing);
     await tester.tap(find.byType(ElevatedButton));
     await tester.pump();
-    expect(find.text("Por favor, informe a altura!"), findsOneWidget);
+    expect(find.text("Please, enter the height!"), findsOneWidget);
 
     await tester.enterText(find.byType(TextFormField).first, "55.0");
     await tester.enterText(find.byType(TextFormField).at(1), "1.79");
