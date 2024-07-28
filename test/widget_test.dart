@@ -14,12 +14,10 @@ import 'package:provider/provider.dart';
 
 void main() {
   testWidgets('Test logic of insert data page', (WidgetTester tester) async {
-    await tester.pumpWidget(
-        ChangeNotifierProvider(
-          create: (context) => BMIController(),
-          child: const MyApp(),
-        )
-    );
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => BMIController(),
+      child: const MyApp(),
+    ));
 
     expect(find.text("Please, enter the weight!"), findsNothing);
     await tester.tap(find.byType(ElevatedButton));

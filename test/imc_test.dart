@@ -2,8 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:imc_tdd/config.dart';
 import 'package:imc_tdd/bmi_controller.dart';
 
-void main(){
-  group('Test start and all levels of bmi logic', (){
+void main() {
+  group('Test start and all levels of bmi logic', () {
     test('value should start at 0', () {
       expect(BMIController().result, results[0]);
     });
