@@ -6,8 +6,8 @@ class BMIController extends ChangeNotifier{
   String _result = results[0];
   String get result => _result;
 
-  void calcBmi({required double peso, required double altura}){
-    final imc = peso / (altura * altura);
+  void calcBmi({required double peso, required double height}){
+    final imc = peso / (height * height);
 
     if (imc < 18.5){
       _result = results[1];

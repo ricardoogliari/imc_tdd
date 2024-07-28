@@ -11,7 +11,7 @@ void main(){
     test('value should be bmi level 1', () {
       final out = BMIController();
 
-      out.calcBmi(peso: 55.0, altura: 1.79);
+      out.calcBmi(peso: 55.0, height: 1.79);
 
       expect(out.result, results[1]);
     });
@@ -19,7 +19,7 @@ void main(){
     test('value should be bmi level 2', () {
       final controller = BMIController();
 
-      controller.calcBmi(peso: 68.0, altura: 1.79);
+      controller.calcBmi(peso: 68.0, height: 1.79);
 
       expect(controller.result, results[2]);
     });
@@ -27,7 +27,7 @@ void main(){
     test('value should be bmi level 3', () {
       final controller = BMIController();
 
-      controller.calcBmi(peso: 89.0, altura: 1.79);
+      controller.calcBmi(peso: 89.0, height: 1.79);
 
       expect(controller.result, results[3]);
     });
@@ -35,7 +35,7 @@ void main(){
     test('value should be bmi level 4', () {
       final controller = BMIController();
 
-      controller.calcBmi(peso: 98.0, altura: 1.79);
+      controller.calcBmi(peso: 98.0, height: 1.79);
 
       expect(controller.result, results[4]);
     });
@@ -43,7 +43,7 @@ void main(){
     test('value should be bmi level 5', () {
       final controller = BMIController();
 
-      controller.calcBmi(peso: 98.0, altura: 1.52);
+      controller.calcBmi(peso: 98.0, height: 1.52);
 
       expect(controller.result, results[5]);
     });
