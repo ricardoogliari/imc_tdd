@@ -5,12 +5,10 @@ import 'package:imc_tdd/pages/result_imc.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(
-    ChangeNotifierProvider(
-      create: (context) => BMIController(),
-      child: const MyApp(),
-    )
-  );
+  runApp(ChangeNotifierProvider(
+    create: (context) => BMIController(),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

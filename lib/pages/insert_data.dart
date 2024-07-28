@@ -26,41 +26,41 @@ class InsertData extends StatelessWidget {
                 controller: _weightController,
                 keyboardType: TextInputType.number,
                 validator: (value) {
-                  if (value == null || value.isEmpty){
+                  if (value == null || value.isEmpty) {
                     return "Please, enter the weight!";
                   }
 
                   return null;
                 },
                 decoration: const InputDecoration(
-                  labelText: "Weight",
-                  border: OutlineInputBorder()
-                ),
+                    labelText: "Weight", border: OutlineInputBorder()),
               ),
-              const SizedBox(height: 6,),
+              const SizedBox(
+                height: 6,
+              ),
               TextFormField(
                 controller: _heightController,
                 keyboardType: TextInputType.number,
                 validator: (value) {
-                  if (value == null || value.isEmpty){
+                  if (value == null || value.isEmpty) {
                     return "Please, enter the height!";
                   }
 
                   return null;
                 },
                 decoration: const InputDecoration(
-                    labelText: "Height",
-                    border: OutlineInputBorder()
-                ),
+                    labelText: "Height", border: OutlineInputBorder()),
               ),
-              const SizedBox(height: 24,),
+              const SizedBox(
+                height: 24,
+              ),
               ElevatedButton(
-                  onPressed: (){
-                    if (_formKey.currentState!.validate()){
-                      Provider.of<BMIController>(context, listen: false).calcBmi(
-                          peso: double.parse(_weightController.text),
-                          height: double.parse(_heightController.text)
-                      );
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      Provider.of<BMIController>(context, listen: false)
+                          .calcBmi(
+                              peso: double.parse(_weightController.text),
+                              height: double.parse(_heightController.text));
 
                       Navigator.pushNamed(context, '/result');
                     }
