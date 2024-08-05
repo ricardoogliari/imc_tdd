@@ -1,10 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:imc_tdd/bmi_controller.dart';
+import 'package:imc_tdd/firebase_options.dart';
 import 'package:imc_tdd/pages/insert_data.dart';
 import 'package:imc_tdd/pages/result_imc.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(ChangeNotifierProvider(
     create: (context) => BMIController(),
     child: const MyApp(),

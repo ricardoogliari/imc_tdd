@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "995189401806",
+    "project_id": "testes-c3ff2",
+    "storage_bucket": "testes-c3ff2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995189401806:android:f4843067e45fb3b561089f",
+        "android_client_info": {
+          "package_name": "com.example.imc_tdd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs3KIDP-EGb7QJ4UoiDpCKEgJA-VkxeNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
