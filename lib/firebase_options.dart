@@ -59,4 +59,5 @@ class DefaultFirebaseOptions {
     projectId: 'testes-c3ff2',
     storageBucket: 'testes-c3ff2.appspot.com',
   );
+
 }
