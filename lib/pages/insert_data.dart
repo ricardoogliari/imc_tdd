@@ -57,12 +57,12 @@ class InsertData extends StatelessWidget {
               ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Provider.of<BMIController>(context, listen: false)
+                      /*Provider.of<BMIController>(context, listen: false)
                           .calcBmi(
                               peso: double.parse(_weightController.text),
                               height: double.parse(_heightController.text));
 
-                      Navigator.pushNamed(context, '/result');
+                      Navigator.pushNamed(context, '/result');*/
                     }
                   },
                   child: const Text("Calculate"))
